@@ -1,27 +1,21 @@
-import { StatusBar } from 'expo-status-bar';
-import { Button } from 'react-native';
-
+import React from 'react';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import ButtonAcess from '../components/button/button';
 export default function Initial() {
-    return(
-        <View style={styles.container}>
-        <Text>Esta é a tela Inicial</Text>
-        <StatusBar style="auto" />
-        <Button onPress={}>
 
-        </Button>
-      </View>
-    );
+
+  return (
+    <View style={styles.container}>
+           <ButtonAcess text={"Acessar"}/>
+    </View>
+  );
 }
 
-
-
-
-
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-  });
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
