@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "#254120",
     borderRadius: 8,
+    paddingRight: 2,
     paddingHorizontal: 16,
     justifyContent: "center",
   },
@@ -29,13 +30,13 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     gap: 20,
+    width: 180
   },
   buttonText: {
     color: "white",
     fontWeight: "bold",
     fontSize: 16,
     textTransform: "uppercase",
-   
   },
   iconContainer: {
     backgroundColor: "#132610",
