@@ -8,7 +8,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Initial" component={Initial} />
+        <Stack.Screen name="Initial" component={Initial} options={{headerTitle: '', headerStyle:{ height: 0}}}/>
         <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
