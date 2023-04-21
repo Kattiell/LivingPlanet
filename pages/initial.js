@@ -5,8 +5,6 @@ import { TouchableOpacity } from 'react-native';
 
 const image = require('./../assets/fundo1.jpg');
 
-
-
 export default function Initial() {
 
   return (
@@ -21,7 +19,7 @@ export default function Initial() {
       </View>
       <View style={styles.containerForm}>
         <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Acessar</Text>
+          <ButtonAcess text={"Acessar"} iconName={"right"}/>
         </TouchableOpacity>
 
       </View>
@@ -29,10 +27,6 @@ export default function Initial() {
 </ImageBackground>
   );
 }
-
-
-
-
 
 const styles = StyleSheet.create({
   container: {
