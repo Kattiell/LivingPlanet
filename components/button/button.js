@@ -2,11 +2,12 @@ import React from "react";
 import { TouchableOpacity, Text, StyleSheet, View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 
-export default function ButtonAcess({ text, iconName }) {
+export default function ButtonAcess({ text, iconName, onPress }) {
   const buttonHeight = 35;
 
   return (
-    <TouchableOpacity style={[styles.button, { height: buttonHeight }]}>
+    <TouchableOpacity
+      style={[styles.button, { height: buttonHeight }]}onPress={onPress}>
       <View style={styles.buttonContainer}>
         <Text style={styles.buttonText}>{text}</Text>
         <View style={styles.iconContainer}>
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    width: 180
+    width: 180,
   },
   buttonText: {
     color: "white",
