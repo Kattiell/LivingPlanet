@@ -26,6 +26,7 @@ export default function GridOfCards({ cards }) {
               donation={cards[i * 2 + 1].donation}
             />
           )}
+          
         </View>
       );
     }
