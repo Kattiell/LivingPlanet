@@ -7,7 +7,7 @@ export default function ButtonAcess({ text, iconName, onPress }) {
 
   return (
     <TouchableOpacity
-      style={[styles.button, { height: buttonHeight }]}onPress={onPress}>
+      style={[styles.button, { height: buttonHeight }]} onPress={onPress}>
       <View style={styles.buttonContainer}>
         <Text style={styles.buttonText}>{text}</Text>
         <View style={styles.iconContainer}>
