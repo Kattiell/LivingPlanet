@@ -6,7 +6,7 @@ export default function Initial() {
 
   return (
     <View style={styles.container}>
-           <ButtonAcess text={"Acessar"}/>
+      <ButtonAcess text={"Acessar"} />
     </View>
   );
 }
