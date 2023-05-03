@@ -21,7 +21,7 @@ export default function ButtonAcess({ text, iconName, onPress }) {
 const styles = StyleSheet.create({
   button: {
     backgroundColor: "#254120",
-    borderRadius: 8,
+    borderRadius: 4,
     paddingRight: 0,
     paddingHorizontal: 30,
     justifyContent: "center",
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    width: 180,
+    width: 177,
   },
   buttonText: {
     color: "white",
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   },
   iconContainer: {
     backgroundColor: "#132610",
-    borderRadius: 8,
+    borderRadius: 4,
     paddingHorizontal: 10,
     justifyContent: "center",
     width: 60,

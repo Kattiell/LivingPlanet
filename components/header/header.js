@@ -5,21 +5,17 @@ import {
   View,
   TouchableOpacity,
   ImageBackground,
-  Image,
   Dimensions,
+  Image,
 } from "react-native";
-import SvgUri from "react-native-svg-uri";
 
 export default function Header({
-  imageSource,
   backgroundImageSource,
   navigateToOngs,
   navigateToDoacoes,
   navigateToNoticias,
 }) {
-  // converte a propriedade imageSource para string
-  const sourceString = imageSource.toString();
-
+  
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -28,11 +24,12 @@ export default function Header({
         resizeMode="cover"
       >
         <View style={styles.logoContainer}>
-          <SvgUri
-            width="100"
-            height="40"
-            source={sourceString}
-          />
+          <View>
+            <Image
+              style={styles.logo}
+              source={require("./../../assets/iconLogo.png")}
+            />
+          </View>
         </View>
         <View style={styles.menuContainer}>
           <TouchableOpacity style={styles.menuItem} onPress={navigateToOngs}>
@@ -60,7 +57,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    height: 190, // aumenta a altura do Header
+    height: 190,
     paddingHorizontal: 0.0 * width, // utiliza a largura da tela para definir o espaçamento horizontal
     position: "absolute",
     top: 0,
@@ -70,10 +67,15 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingTop: 40,
+    paddingEnd: 30,
+    paddingStart: 30,
   },
   logo: {
-    width: 0.35 * width, // utiliza a largura da tela para definir o tamanho da logo
-    height: 0.07 * width,
+    width: 0.09 * width, // utiliza a largura da tela para definir o tamanho da logo
+    height: 0.09 * width,
   },
   menuContainer: {
     flexDirection: "row",
@@ -86,7 +88,9 @@ const styles = StyleSheet.create({
   },
   menuItemText: {
     fontSize: 18,
-    color: "#FFF",
+    color: "white",
+    fontSize: 35,
+    fontFamily: "Imbue",
   },
   backgroundImage: {
     flex: 1,

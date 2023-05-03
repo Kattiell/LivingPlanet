@@ -1,25 +1,14 @@
 import React from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Button,
-  Image,
-  ImageBackground,
-} from "react-native";
+import { StyleSheet, View, Image, ImageBackground } from "react-native";
 import ButtonAcess from "../components/button/button";
 import { TouchableOpacity } from "react-native";
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from "@react-navigation/native";
 
 const image = require("./../assets/fundo1.jpg");
 
 export default function Initial() {
   const navigation = useNavigation();
-
-  // Função a ser executada quando o botão for pressionado
   const handleButtonPress = () => {
-    // Coloque aqui o código ou a função que você deseja executar
-    // quando o botão for pressionado
     navigation.navigate("Home"); // Exemplo: navegar para a tela "Home"
   };
   return (
@@ -34,7 +23,11 @@ export default function Initial() {
         </View>
         <View style={styles.containerForm}>
           <TouchableOpacity style={styles.button}>
-            <ButtonAcess text={"Acessar"} iconName={"right"} onPress={handleButtonPress} />
+            <ButtonAcess
+              text={"Acessar"}
+              iconName={"right"}
+              onPress={handleButtonPress}
+            />
           </TouchableOpacity>
         </View>
       </View>
