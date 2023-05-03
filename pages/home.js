@@ -1,43 +1,63 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Text, ImageBackground, Image, TouchableOpacity } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import {
+  StyleSheet,
+  View,
+  Text,
+  ImageBackground,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import CardNoticiaImagem from "../components/CardNoticiaImagem/CardNoticiaImagem";
-import ButtonAcess from '../components/button/button';
-
+import ButtonAcess from "../components/button/button";
+import { useNavigation } from "@react-navigation/native";
 export default function Home() {
+  const navigation = useNavigation();
+
+  // Função a ser executada quando o botão for pressionado
+  const handleButtonPress = () => {
+    navigation.navigate("Notice"); 
+  };
+
   return (
-      <ImageBackground imageStyle={{ resizeMode: 'cover' }} source={require('./../assets/fundo.jpg')} style={styles.background}>
-        <View style={styles.container}>
+    <ImageBackground
+      imageStyle={{ resizeMode: "cover" }}
+      source={require("./../assets/fundo.jpg")}
+      style={styles.background}
+    >
+      <View style={styles.container}>
         <View style={styles.containerOptions}>
           <View>
-            <Image style={styles.iconLogo} source={require('./../assets/iconLogo.png')} />
+            <Image
+              style={styles.iconLogo}
+              source={require("./../assets/iconLogo.png")}
+            />
           </View>
 
           <View style={styles.options}>
             <View>
-              <TouchableOpacity >
+              <TouchableOpacity>
                 <Text style={styles.textOptionButton}>Ongs</Text>
               </TouchableOpacity>
             </View>
 
             <View>
-              <TouchableOpacity >
+              <TouchableOpacity>
                 <Text style={styles.textOptionButton}>Doações</Text>
               </TouchableOpacity>
             </View>
 
             <View>
-              <TouchableOpacity >
+              <TouchableOpacity>
                 <Text style={styles.textOptionButton}>Notícias</Text>
               </TouchableOpacity>
             </View>
           </View>
-
         </View>
 
         <View style={styles.mainTitle}>
           <Text style={styles.mainTitleText}>
-            <Text style={{ fontWeight: "700" }}>Desmatamento</Text> na {'\n'}
-            Amazônia saiba o que {'\n'}
+            <Text style={{ fontWeight: "700" }}>Desmatamento</Text> na {"\n"}
+            Amazônia saiba o que {"\n"}
             fazer e como ajudar
           </Text>
         </View>
@@ -46,28 +66,30 @@ export default function Home() {
           <CardNoticiaImagem
             height={140}
             imagePath={require("./../assets/leopardo.jpg")}
-            textContent={"Onça Pintada: entenda porque um dos felinos mais fomidavéis corre risco de extinção."}
+            textContent={
+              "Onça Pintada: entenda porque um dos felinos mais fomidavéis corre risco de extinção."
+            }
+            onPress={handleButtonPress}
           />
         </View>
-
-        </View>
-      </ImageBackground>
+      </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  container:{
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    height: '100%',
-    width: '100%',
+  container: {
+    backgroundColor: "rgba(0, 0, 0, 0.7)",
+    height: "100%",
+    width: "100%",
     flex: 1,
     margin: 0,
     padding: 0,
-    height:"100%",
+    height: "100%",
   },
   background: {
-    height: '100%',
-    width: '100%',
+    height: "100%",
+    width: "100%",
     flex: 1,
     margin: 0,
     padding: 0,
@@ -75,13 +97,13 @@ const styles = StyleSheet.create({
   containerOptions: {
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingTop: 60,
+    paddingTop: 40,
     paddingEnd: 30,
-    paddingStart: 30
+    paddingStart: 30,
   },
   iconLogo: {
     width: 40,
-    height: 40
+    height: 40,
   },
   options: {
     flexDirection: "row",
@@ -91,15 +113,15 @@ const styles = StyleSheet.create({
   textOptionButton: {
     color: "white",
     fontSize: 35,
-    fontFamily: "Imbue"
+    fontFamily: "Imbue",
   },
   mainTitle: {
     padding: 40,
-    paddingBottom: 100
+    paddingBottom: 100,
   },
   mainTitleText: {
     color: "white",
-    fontSize: 24
+    fontSize: 24,
   },
   mainCard: {
     paddingLeft: 40,
