@@ -14,10 +14,11 @@ export default function Header({
   navigateToOngs,
   navigateToDoacoes,
   navigateToNoticias,
+  height, // nova propriedade de altura
 }) {
   
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { height: height || 190 }]}>
       <ImageBackground
         source={backgroundImageSource}
         style={styles.backgroundImage}
@@ -57,12 +58,9 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    height: 190,
+    width: "100%",
+    height: "100%",
     paddingHorizontal: 0.0 * width, // utiliza a largura da tela para definir o espaçamento horizontal
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
     backgroundColor: "rgba(0,0,0,0.3)",
   },
   logoContainer: {
@@ -82,6 +80,9 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
     alignItems: "flex-start",
     paddingBottom: 145,
+    paddingTop: 35,
+    paddingEnd: 30,
+    paddingStart: 30,
   },
   menuItem: {
     paddingHorizontal: 8,
@@ -94,6 +95,9 @@ const styles = StyleSheet.create({
   },
   backgroundImage: {
     flex: 1,
+    flexDirection: "row",
+    height: "100%",
+    alignItems: "flex-start",
     resizeMode: "cover",
     justifyContent: "center",
   },
