@@ -1,4 +1,3 @@
-import { StatusBar } from "expo-status-bar";
 import {
   StyleSheet,
   View,
@@ -8,14 +7,13 @@ import {
   TouchableOpacity,
 } from "react-native";
 import CardNoticiaImagem from "../components/CardNoticiaImagem/CardNoticiaImagem";
-import ButtonAcess from "../components/button/button";
 import { useNavigation } from "@react-navigation/native";
 export default function Home() {
   const navigation = useNavigation();
 
   // Função a ser executada quando o botão for pressionado
   const handleButtonPress = () => {
-    navigation.navigate("Notice"); 
+    navigation.navigate("Noticia");
   };
 
   return (
@@ -35,19 +33,19 @@ export default function Home() {
 
           <View style={styles.options}>
             <View>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.navigate("Ongs")}>
                 <Text style={styles.textOptionButton}>Ongs</Text>
               </TouchableOpacity>
             </View>
 
             <View>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.navigate("Doacoes")}>
                 <Text style={styles.textOptionButton}>Doações</Text>
               </TouchableOpacity>
             </View>
 
             <View>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.navigate("Noticias")}>
                 <Text style={styles.textOptionButton}>Notícias</Text>
               </TouchableOpacity>
             </View>

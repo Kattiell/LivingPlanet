@@ -1,6 +1,7 @@
 import { createStackNavigator } from "@react-navigation/stack";
 import Initial from "./pages/initial";
 import Home from "./pages/home";
+import DetailNotice from "./pages/detailNotice";
 import Notice from "./pages/notice";
 import { useFonts } from 'expo-font';
 import { Text } from "react-native";
@@ -24,9 +25,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Initial" component={Initial} options={{headerTitle: '', headerStyle:{ height: 0}}}/>
+        <Stack.Screen name="Inicial" component={Initial} options={{headerTitle: '', headerStyle:{ height: 0}}}/>
         <Stack.Screen name="Home" component={Home} />
-        <Stack.Screen name="Notice" component={Notice} />
+        <Stack.Screen name="Noticia" component={Notice} />
+        <Stack.Screen name="Noticia Detalhada" component={DetailNotice} />
       </Stack.Navigator>
     </NavigationContainer>
   );
