@@ -42,9 +42,9 @@ export default function Donation() {
           cards={[
             {
               institutionName: "GreenPeace",
-              linkdonation: "Doação 1",
+              linkdonation: "https://doe.greenpeace.org.br/doar",
               contact: "+55 34 998052735",
-              description: "Aqui vem uma breve descrição",
+              description: "Clique aqui para fazer doações.",
               onPress: () =>
                 handleOpenLink(
                   "https://doe.greenpeace.org.br/doar/p?utm_term=greenpeace&utm_campaign=paretoacgsnbrandbr-unificada-doacao&utm_source=google&utm_medium=cpc"
@@ -52,9 +52,9 @@ export default function Donation() {
             },
             {
               institutionName: "World Wide Fund",
-              linkdonation: "Doação 2",
+              linkdonation: "https://www.wwf.org.br/",
               contact: "+55 34 999607541",
-              description: "Aqui vem uma breve descrição",
+              description: "Clique aqui para fazer doações.",
               onPress: () =>
                 handleOpenLink(
                   "https://www.wwf.org.br/"
@@ -62,9 +62,9 @@ export default function Donation() {
             },
             {
               institutionName: "Conservation International Brasil",
-              linkdonation: "Doação 3",
+              linkdonation: "https://www.conservation.org/brasil",
               contact: "+55 34 998052735",
-              description: "Aqui vem uma breve descrição",
+              description: "Clique aqui para fazer doações.",
               onPress: () =>
                 handleOpenLink(
                   "https://www.conservation.org/brasil"
@@ -72,9 +72,9 @@ export default function Donation() {
             },
             {
               institutionName: "Instituto Socioambiental – ISA",
-              linkdonation: "Doação 4",
+              linkdonation: "https://www.socioambiental.org/",
               contact: "+55 34 998052735",
-              description: "Aqui vem uma breve descrição",
+              description: "Clique aqui para fazer doações.",
               onPress: () =>
                 handleOpenLink(
                   "https://www.socioambiental.org/"
@@ -82,9 +82,9 @@ export default function Donation() {
             },
             {
               institutionName: "SOS Amazônia",
-              linkdonation: "Doação 5",
+              linkdonation: "https://sosamazonia.org.br/",
               contact: "+55 34 998052735",
-              description: "Aqui vem uma breve descrição",
+              description: "Clique aqui para fazer doações.",
               onPress: () =>
                 handleOpenLink(
                   "https://sosamazonia.org.br/"
@@ -92,9 +92,9 @@ export default function Donation() {
             },
             {
               institutionName: "Fundação Biodiversitas",
-              linkdonation: "Doação 6",
+              linkdonation: "https://biodiversitas.org.br/",
               contact: "+55 34 998052735",
-              description: "Aqui vem uma breve descrição",
+              description: "Clique aqui para fazer doações.",
               onPress: () =>
                 handleOpenLink(
                   "https://biodiversitas.org.br/"
