@@ -8,12 +8,12 @@ import {
 } from "react-native";
 import CardNoticiaImagem from "../components/CardNoticiaImagem/CardNoticiaImagem";
 import { useNavigation } from "@react-navigation/native";
+
 export default function Home() {
   const navigation = useNavigation();
 
-  // Função a ser executada quando o botão for pressionado
   const handleButtonPress = () => {
-    navigation.navigate("Noticia");
+    navigation.navigate("Noticias");
   };
 
   return (
@@ -33,13 +33,15 @@ export default function Home() {
 
           <View style={styles.options}>
             <View>
-              <TouchableOpacity onPress={() => navigation.navigate("Ongs")}>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("Organizações")}
+              >
                 <Text style={styles.textOptionButton}>Ongs</Text>
               </TouchableOpacity>
             </View>
 
             <View>
-              <TouchableOpacity onPress={() => navigation.navigate("Doacoes")}>
+              <TouchableOpacity onPress={() => navigation.navigate("Doações")}>
                 <Text style={styles.textOptionButton}>Doações</Text>
               </TouchableOpacity>
             </View>
@@ -83,7 +85,6 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 0,
     padding: 0,
-    height: "100%",
   },
   background: {
     height: "100%",

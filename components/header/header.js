@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import {
   StyleSheet,
@@ -14,22 +15,30 @@ export default function Header({
   navigateToOngs,
   navigateToDoacoes,
   navigateToNoticias,
-  height, // nova propriedade de altura
+  headerHeight = 190,
+  title,
 }) {
-  
+  const navigation = useNavigation();
+  const handleReturnPress = () => {
+    navigation.navigate("Home");
+  };
   return (
-    <View style={[styles.container, { height: height || 190 }]}>
+    <View style={[styles.container, { height: headerHeight }]}>
       <ImageBackground
         source={backgroundImageSource}
         style={styles.backgroundImage}
         resizeMode="cover"
       >
+        <View style={styles.overlay} />
         <View style={styles.logoContainer}>
-          <View>
+          <TouchableOpacity onPress={handleReturnPress}>
             <Image
               style={styles.logo}
               source={require("./../../assets/iconLogo.png")}
             />
+          </TouchableOpacity>
+          <View style={styles.titleContainer}>
+            <Text style={styles.title}>{title}</Text>
           </View>
         </View>
         <View style={styles.menuContainer}>
@@ -55,33 +64,42 @@ const { width } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    width: "100%",
-    height: "100%",
-    paddingHorizontal: 0.0 * width, // utiliza a largura da tela para definir o espaçamento horizontal
-    backgroundColor: "rgba(0,0,0,0.3)",
-  },
-  logoContainer: {
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
-    paddingTop: 40,
-    paddingEnd: 30,
-    paddingStart: 30,
+    paddingHorizontal: 0.0 * width,
+  },
+  logoContainer: {
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingTop: 20,
+    paddingStart: 40,
   },
   logo: {
-    width: 0.09 * width, // utiliza a largura da tela para definir o tamanho da logo
+    width: 0.09 * width,
     height: 0.09 * width,
+  },
+  titleContainer: {
+    marginTop: 35,
+    paddingLeft: 90,
+
+    paddingStart: 80,
+    width: 0.49 * width, // Largura ajustada para o título
+  },
+  title: {
+    fontSize: 19.5,
+    color: "white",
+    fontWeight: "bold",
+    textAlign: "left",
   },
   menuContainer: {
     flexDirection: "row",
     justifyContent: "flex-end",
-    alignItems: "flex-start",
-    paddingBottom: 145,
-    paddingTop: 35,
-    paddingEnd: 30,
+    alignItems: "flex-end",
+
+    paddingTop: 15,
+    paddingEnd: 100,
     paddingStart: 30,
   },
   menuItem: {
@@ -96,9 +114,12 @@ const styles = StyleSheet.create({
   backgroundImage: {
     flex: 1,
     flexDirection: "row",
-    height: "100%",
     alignItems: "flex-start",
     resizeMode: "cover",
     justifyContent: "center",
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: "rgba(0, 0, 0, 0.4)",
   },
 });
