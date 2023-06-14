@@ -1,11 +1,10 @@
 // eslint-disable-next-line react/no-deprecated
-
-import { StyleSheet, Text, View, ScrollView } from "react-native";
+import { StyleSheet, Text, View, ScrollView, Linking } from "react-native";
 import Header from "../components/header/header";
 import { useNavigation } from "@react-navigation/native";
 import GridOfCards from "../components/cardGrid/cardGrid";
 
-export default function Ongs() {
+export default function Donation() {
   const navigation = useNavigation();
   const handleNavigateToOngs = () => {
     navigation.navigate("Organizações");
@@ -16,74 +15,90 @@ export default function Ongs() {
   const handleNavigateToNoticias = () => {
     navigation.navigate("Noticias");
   };
-
+  const handleOpenLink = (url) => {
+    Linking.openURL(url);
+  };
   return (
     <View style={styles.container}>
       <ScrollView style={styles.scrollContainer}>
         <Header
           headerHeight={210}
-          backgroundImageSource={require("../assets/fundo2.png")}
+          backgroundImageSource={require("../assets/header.png")}
           navigateToOngs={handleNavigateToOngs}
           navigateToDoacoes={handleNavigateToDoacoes}
           navigateToNoticias={handleNavigateToNoticias}
         />
-
         <View>
-          <Text style={styles.title}>ONGS BRASILEIRAS</Text>
+          <Text style={styles.title}>DOAÇÕES</Text>
         </View>
-
         <View>
+          <Text style={styles.desc}>Bem-vindo à nossa página de Doações!</Text>
           <Text style={styles.desc}>
-            No Brasil, existem centenas de ONGs que atuam na “linha de frente”
-            pela causa ambiental, dedicadas ao uso dos recursos naturais e dos
-            não naturais de forma sustentável. Essa mobilização é fundamental
-            pelas gerações do presente e pelas que virão.
+            Aqui você têm a oportunidade de fazer a diferença e contribuir para
+            a preservação do meio ambiente.
           </Text>
         </View>
-
         <GridOfCards
           cards={[
             {
-              institutionName: "Nome da Organização",
-              linkdonation: "Doador 1",
+              institutionName: "GreenPeace",
+              linkdonation: "Doação 1",
               contact: "+55 34 998052735",
-              description: "Aqui vem uma breve descrição das Ongs",
-              onPress: () => navigation.navigate("Organizações Detalhada"),
+              description: "Aqui vem uma breve descrição",
+              onPress: () =>
+                handleOpenLink(
+                  "https://doe.greenpeace.org.br/doar/p?utm_term=greenpeace&utm_campaign=paretoacgsnbrandbr-unificada-doacao&utm_source=google&utm_medium=cpc"
+                ),
             },
             {
-              institutionName: "Nome da Organização",
-              linkdonation: "Doador 2",
-              contact: "+55 34 998052735",
-              description: "Aqui vem uma breve descrição das Ongs",
-              onPress: () => navigation.navigate("NomeDaRota"),
+              institutionName: "World Wide Fund",
+              linkdonation: "Doação 2",
+              contact: "+55 34 999607541",
+              description: "Aqui vem uma breve descrição",
+              onPress: () =>
+                handleOpenLink(
+                  "https://www.wwf.org.br/"
+                ),
             },
             {
-              institutionName: "Nome da Organização",
-              linkdonation: "Doador 3",
+              institutionName: "Conservation International Brasil",
+              linkdonation: "Doação 3",
               contact: "+55 34 998052735",
-              description: "Aqui vem uma breve descrição das Ongs",
-              onPress: () => navigation.navigate("NomeDaRota"),
+              description: "Aqui vem uma breve descrição",
+              onPress: () =>
+                handleOpenLink(
+                  "https://www.conservation.org/brasil"
+                ),
             },
             {
-              institutionName: "Nome da Organização",
-              linkdonation: "Doador 4",
+              institutionName: "Instituto Socioambiental – ISA",
+              linkdonation: "Doação 4",
               contact: "+55 34 998052735",
-              description: "Aqui vem uma breve descrição das Ongs",
-              onPress: () => navigation.navigate("NomeDaRota"),
+              description: "Aqui vem uma breve descrição",
+              onPress: () =>
+                handleOpenLink(
+                  "https://www.socioambiental.org/"
+                ),
             },
             {
-              institutionName: "Nome da Organização",
-              linkdonation: "Doador 5",
+              institutionName: "SOS Amazônia",
+              linkdonation: "Doação 5",
               contact: "+55 34 998052735",
-              description: "Aqui vem uma breve descrição das Ongs",
-              onPress: () => navigation.navigate("NomeDaRota"),
+              description: "Aqui vem uma breve descrição",
+              onPress: () =>
+                handleOpenLink(
+                  "https://sosamazonia.org.br/"
+                ),
             },
             {
-              institutionName: "Nome da Organização",
-              linkdonation: "Doador 6",
+              institutionName: "Fundação Biodiversitas",
+              linkdonation: "Doação 6",
               contact: "+55 34 998052735",
-              description: "Aqui vem uma breve descrição das Ongs",
-              onPress: () => navigation.navigate("NomeDaRota"),
+              description: "Aqui vem uma breve descrição",
+              onPress: () =>
+                handleOpenLink(
+                  "https://biodiversitas.org.br/"
+                ),
             },
           ]}
         />
@@ -109,6 +124,7 @@ const styles = StyleSheet.create({
     lineHeight: 30,
     textAlign: "center",
     color: "#000000",
+    marginBottom: 10,
   },
   title: {
     paddingTop: 10,
