@@ -85,6 +85,7 @@ export default function Home() {
         <View style={styles.mainCard}>
           <CardNoticiaImagem
             imagePath={require("./../assets/tucano.jpg")}
+            width={280}
             textContent={
               "Filhotes de tucano são resgatados em Novo Hamburgo, três animais foram encontrados."
             }
