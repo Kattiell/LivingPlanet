@@ -30,37 +30,37 @@ export default function App() {
         <Stack.Screen
           name="Inicial"
           component={Initial}
-          options={{ headerTitle: "", headerStyle: { height: 0 } }}
+          options={{ headerTitle: "", headerStyle: { height: 0 }, headerShown: false }}
         />
         <Stack.Screen
           name="Home"
           component={Home}
-          options={{ headerTitle: "", headerStyle: { height: 0 } }}
+          options={{ headerTitle: "", headerStyle: { height: 0 }, headerShown: false }}
         />
         <Stack.Screen
           name="Noticias"
           component={Notice}
-          options={{ headerTitle: "", headerStyle: { height: 0 } }}
+          options={{ headerTitle: "", headerStyle: { height: 0 }, headerShown: false }}
         />
         <Stack.Screen
           name="Noticia Detalhada"
           component={DetailNotice}
-          options={{ headerTitle: "", headerStyle: { height: 0 } }}
+          options={{ headerTitle: "", headerStyle: { height: 0 }, headerShown: false }}
         />
         <Stack.Screen
           name="Organizações"
           component={Ongs}
-          options={{ headerTitle: "", headerStyle: { height: 0 } }}
+          options={{ headerTitle: "", headerStyle: { height: 0 }, headerShown: false }}
         />
         <Stack.Screen
           name="Organizações Detalhada"
           component={OngsDetail}
-          options={{ headerTitle: "", headerStyle: { height: 0 } }}
+          options={{ headerTitle: "", headerStyle: { height: 0 }, headerShown: false }}
         />
         <Stack.Screen
           name="Doações"
           component={Donation}
-          options={{ headerTitle: "", headerStyle: { height: 0 } }}
+          options={{ headerTitle: "", headerStyle: { height: 0 }, headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>

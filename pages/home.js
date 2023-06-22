@@ -64,7 +64,6 @@ export default function Home() {
 
         <View style={styles.mainCard}>
           <CardNoticiaImagem
-            height={140}
             imagePath={require("./../assets/leopardo.jpg")}
             textContent={
               "Onça Pintada: entenda porque um dos felinos mais fomidavéis corre risco de extinção."
@@ -72,6 +71,28 @@ export default function Home() {
             onPress={handleButtonPress}
           />
         </View>
+        
+        <View style={styles.mainCard}>
+          <CardNoticiaImagem
+            imagePath={require("./../assets/araras.jpg")}
+            textContent={
+              "O drama das araras-azuis e outros animais sob risco de extinção e acuados pelo fogo no Pantanal."
+            }
+            onPress={handleButtonPress}
+          />
+        </View>
+        
+        <View style={styles.mainCard}>
+          <CardNoticiaImagem
+            imagePath={require("./../assets/tucano.jpg")}
+            width={280}
+            textContent={
+              "Filhotes de tucano são resgatados em Novo Hamburgo, três animais foram encontrados."
+            }
+            onPress={handleButtonPress}
+          />
+        </View>
+        
       </View>
     </ImageBackground>
   );
@@ -125,5 +146,6 @@ const styles = StyleSheet.create({
   mainCard: {
     paddingLeft: 40,
     paddingRight: 40,
+    paddingBottom: 30
   },
 });
